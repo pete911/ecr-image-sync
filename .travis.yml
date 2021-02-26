@@ -1,0 +1,42 @@
+language: go
+
+env:
+  - VERSION="0.$TRAVIS_BUILD_NUMBER"
+
+go:
+  - 1.16.x
+
+git:
+  depth: false
+  quiet: true
+  submodules: false
+
+branches:
+  only:
+    - main
+
+services:
+  - docker
+
+script:
+  - "make test"
+  - "VERSION=$VERSION make image"
+  - "make release"
+
+before_deploy:
+  - git config --local user.name "pete911"
+  - git config --local user.email "p.reisinger@gmail.com"
+  - git tag $VERSION
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file:
+    - "releases/ecr-image-sync_linux.tar.gz"
+    - "releases/ecr-image-sync_darwin.tar.gz"
+    - "releases/ecr-image-sync_windows.tar.gz"
+  skip_cleanup: true
+
+after_success:
+  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+  VERSION=$VERSION make push-image ;

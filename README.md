@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.com/pete911/ecr-image-sync.svg?branch=main)](https://www.travis-ci.com/pete911/ecr-image-sync)
+
 # ecr-image-sync
 
 Downloads docker images from provided list, then tag with AWS ECR tags and uploads them to AWS ECR. This helps to keep
