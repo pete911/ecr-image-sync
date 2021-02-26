@@ -32,9 +32,10 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file:
-    - "releases/ecr-image-sync_linux.tar.gz"
-    - "releases/ecr-image-sync_darwin.tar.gz"
-    - "releases/ecr-image-sync_windows.tar.gz"
+    - "releases/ecr-image-sync_linux_amd64.tar.gz"
+    - "releases/ecr-image-sync_darwin_amd64.tar.gz"
+    - "releases/ecr-image-sync_windows_amd64.tar.gz"
+    - "releases/ecr-image-sync_darwin_arm64.tar.gz"
   skip_cleanup: true
 
 after_success:
