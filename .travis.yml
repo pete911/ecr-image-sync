@@ -37,6 +37,8 @@ deploy:
     - "releases/ecr-image-sync_windows_amd64.tar.gz"
     - "releases/ecr-image-sync_darwin_arm64.tar.gz"
   skip_cleanup: true
+  on:
+    branch: main
 
 after_success:
   docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
