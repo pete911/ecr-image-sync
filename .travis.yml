@@ -41,5 +41,5 @@ deploy:
     branch: main
 
 after_success:
-  echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
-  VERSION=$VERSION make push-image ;
+  - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+  - VERSION=$VERSION make push-image
