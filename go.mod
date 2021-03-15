@@ -7,7 +7,7 @@ require (
 	github.com/aws/aws-sdk-go-v2 v1.2.1
 	github.com/aws/aws-sdk-go-v2/config v1.1.1
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.1.2
-	github.com/aws/aws-sdk-go-v2/service/sts v1.1.1
+	github.com/aws/aws-sdk-go-v2/service/sts v1.1.2
 	github.com/containerd/containerd v1.4.3 // indirect
 	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/docker v20.10.5+incompatible
