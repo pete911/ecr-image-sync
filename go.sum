@@ -18,6 +18,7 @@ github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.0.4/go.mod h1:BDw1ukadBHn//M/n7
 github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.0.5/go.mod h1:z/NKNlYxMzphl7TzjV+ctUebHF4CFNGGlSvmV/NKcJU=
 github.com/aws/aws-sdk-go-v2/service/ecr v1.2.0 h1:6ExOoVgntAVuVARounLgbXnMLWjy0l5iXf/wAu90NgI=
 github.com/aws/aws-sdk-go-v2/service/ecr v1.2.0/go.mod h1:fxAA3GE+slgrsFyA3bsN0lknZ+egpPdvu7GosNGoVT4=
+github.com/aws/aws-sdk-go-v2/service/ecr v1.2.1/go.mod h1:iuqVazSEO7GWaX6WYrVWCVECL3ixXwhL6Q6RF4V2Db0=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.4 h1:DRIpujxvhdv3+xLXCoaKk1VB4vk/Sh8sIOBewLJJpes=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.4/go.mod h1:DGOKKGeqXdIWX3xD5DKr4otrgNw5cstwUCJYwSKxbp0=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.5/go.mod h1:MW0O/RpmVpS6MWKn6W03XEJmqXlG7+d3iaYLzkd2fAc=
