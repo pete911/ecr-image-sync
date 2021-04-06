@@ -107,7 +107,7 @@ func (c Client) GetAuthorizationDataForRegion(region string) (AuthorizationData,
 	}
 
 	if len(resp.AuthorizationData) != 1 {
-		return AuthorizationData{}, fmt.Errorf("got %d tokens, ecpected 1", len(resp.AuthorizationData))
+		return AuthorizationData{}, fmt.Errorf("got %d tokens, expected 1", len(resp.AuthorizationData))
 	}
 	return toLoginData(resp.AuthorizationData[0])
 }
