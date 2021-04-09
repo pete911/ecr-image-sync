@@ -6,6 +6,7 @@ github.com/Microsoft/go-winio v0.4.16 h1:FtSW/jqD+l4ba5iPBj9CODVtgfYAD8w2wS923g/
 github.com/Microsoft/go-winio v0.4.16/go.mod h1:XB6nPKklQyQ7GC9LdcBEcBl8PF76WugXOPRXwdLnMv0=
 github.com/aws/aws-sdk-go-v2 v1.3.1 h1:KKstwh6zsuUhQH3GvSor7M3am/+imPqydFOZHzlkTKc=
 github.com/aws/aws-sdk-go-v2 v1.3.1/go.mod h1:5SmWRTjN6uTRFNCc7rR69xHsdcUJnthmaRHGDsYhpTE=
+github.com/aws/aws-sdk-go-v2 v1.3.2/go.mod h1:7OaACgj2SX3XGWnrIjGlJM22h6yD6MEWKvm7levnnM8=
 github.com/aws/aws-sdk-go-v2/config v1.1.4 h1:2hjdDldmJJjb+rFieQySfOFt4WwxKZJVTEB6RBI74T4=
 github.com/aws/aws-sdk-go-v2/config v1.1.4/go.mod h1:op05ummoVoAqctpA80jVt/+hvEtLfuKmDyx0bIuvfbE=
 github.com/aws/aws-sdk-go-v2/credentials v1.1.4 h1:whYYw2srG+zUQzUw4LhML83f+xd22Vm7gv0I7aJglc8=
@@ -16,12 +17,15 @@ github.com/aws/aws-sdk-go-v2/service/ecr v1.2.1 h1:rdvoJaE51N1tuNc2B75vNsZu2P0xV
 github.com/aws/aws-sdk-go-v2/service/ecr v1.2.1/go.mod h1:iuqVazSEO7GWaX6WYrVWCVECL3ixXwhL6Q6RF4V2Db0=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.5 h1:GbW4bbc1iED64aIL203xcGSfLzWOWuIdnKV0guMcJvg=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.5/go.mod h1:MW0O/RpmVpS6MWKn6W03XEJmqXlG7+d3iaYLzkd2fAc=
+github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.0.6/go.mod h1:L0KWr0ASo83PRZu9NaZaDsw3koS6PspKv137DMDZjHo=
 github.com/aws/aws-sdk-go-v2/service/sso v1.1.4 h1:Tr/SsFDXWN8rntdzTNrDs/MvuBXRCjY6xvJrPFUPKRM=
 github.com/aws/aws-sdk-go-v2/service/sso v1.1.4/go.mod h1:yQayEbOWH75NaKFylsFocBc3yanYEGndlOaH4i/Lvno=
 github.com/aws/aws-sdk-go-v2/service/sts v1.2.1 h1:1koRvKlZMN+FhTGV5f4q6vRHXNJzeZlPKzbs1/Y32Kg=
 github.com/aws/aws-sdk-go-v2/service/sts v1.2.1/go.mod h1:L1LH5nHMXxdkKj057ZUx7Wi50CCrkZ+9jkTnBnY2j/w=
+github.com/aws/aws-sdk-go-v2/service/sts v1.2.2/go.mod h1:ssRzzJ2RZOVuKj2Vx1YE7ypfil/BIlgmQnCSW4DistU=
 github.com/aws/smithy-go v1.3.0 h1:awbB2OJBZ/Txj+c4q+qhDQs3Ob0sRhBuIIkOD4Aq8yc=
 github.com/aws/smithy-go v1.3.0/go.mod h1:SObp3lf9smib00L/v3U2eAKG8FyQ7iLrJnQiAmR5n+E=
+github.com/aws/smithy-go v1.3.1/go.mod h1:SObp3lf9smib00L/v3U2eAKG8FyQ7iLrJnQiAmR5n+E=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cncf/udpa/go v0.0.0-20201120205902-5459f2c99403/go.mod h1:WmhPx2Nbnhtbo57+VJT5O0JRkEi1Wbu0z5j0R8u5Hbk=
