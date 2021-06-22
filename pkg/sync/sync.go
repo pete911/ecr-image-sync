@@ -25,7 +25,11 @@ func NewClient(awsClient aws.Client, dockerClient docker.Client) (Client, error)
 
 func (c Client) SyncImage(image string, dryRun bool) error {
 
-	publicImage := docker.ToImage(image)
+	publicImage, err := docker.ToImage(image)
+	if err != nil {
+		return err
+	}
+
 	ecrImage := publicImage.ToECRImage(c.awsClient.Account, c.awsClient.Region)
 	existsInECR, err := c.awsClient.ECRImageExists(ecrImage.Repository, ecrImage.Tag)
 	if err != nil {

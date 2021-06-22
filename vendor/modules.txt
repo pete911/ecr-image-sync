@@ -138,6 +138,8 @@ github.com/pkg/errors
 # github.com/sirupsen/logrus v1.8.0
 ## explicit
 github.com/sirupsen/logrus
+# golang.org/dl v0.0.0-20210610154546-0cc6883720ee
+## explicit
 # golang.org/x/net v0.0.0-20201021035429-f5854403a974
 golang.org/x/net/internal/socks
 golang.org/x/net/proxy

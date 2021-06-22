@@ -26,7 +26,11 @@ type Image struct {
 	Tag        string
 }
 
-func ToImage(image string) Image {
+func ToImage(image string) (Image, error) {
+
+	if strings.HasPrefix(image, ":") || strings.HasSuffix(image, ":") {
+		return Image{}, fmt.Errorf("image name %s is invalid", image)
+	}
 
 	// get tag
 	var img Image
@@ -46,11 +50,11 @@ func ToImage(image string) Image {
 			img.Registry = imageParts[0]
 		}
 		img.Repository = strings.Join(imageParts[1:], "/")
-		return img
+		return img, nil
 	}
 
 	img.Repository = imageWithoutVersion
-	return img
+	return img, nil
 }
 
 func (i Image) IsECRRegistry() bool {
