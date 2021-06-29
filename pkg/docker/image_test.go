@@ -60,6 +60,27 @@ func TestToImage(t *testing.T) {
 			t.Errorf("tag: expected v0.0.58, actual %s", image.Tag)
 		}
 	})
+
+	t.Run("image ends with : is invalid", func(t *testing.T) {
+		_, err := ToImage("quay.io/jacksontj/promxy:")
+		if err == nil {
+			t.Errorf("no version after ':': expected error %v", err)
+		}
+	})
+
+	t.Run("image starts with : is invalid", func(t *testing.T) {
+		_, err := ToImage(":latest")
+		if err == nil {
+			t.Errorf("image starts with ':': expected error %v", err)
+		}
+	})
+
+	t.Run("image name is : is invalid", func(t *testing.T) {
+		_, err := ToImage(":")
+		if err == nil {
+			t.Errorf("image name ':': expected error %v", err)
+		}
+	})
 }
 
 func TestImage_IsECRRegistry(t *testing.T) {
