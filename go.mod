@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/Microsoft/go-winio v0.4.16 // indirect
-	github.com/aws/aws-sdk-go-v2 v1.9.0
+	github.com/aws/aws-sdk-go-v2 v1.9.1
 	github.com/aws/aws-sdk-go-v2/config v1.8.1
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.5.0
 	github.com/aws/aws-sdk-go-v2/service/sts v1.7.0
