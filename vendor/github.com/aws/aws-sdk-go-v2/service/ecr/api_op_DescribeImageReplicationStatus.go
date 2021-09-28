@@ -11,56 +11,48 @@ import (
 	smithyhttp "github.com/aws/smithy-go/transport/http"
 )
 
-// Starts an image vulnerability scan. An image scan can only be started once per
-// 24 hours on an individual image. This limit includes if an image was scanned on
-// initial push. For more information, see Image scanning
-// (https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) in
-// the Amazon Elastic Container Registry User Guide.
-func (c *Client) StartImageScan(ctx context.Context, params *StartImageScanInput, optFns ...func(*Options)) (*StartImageScanOutput, error) {
+// Returns the replication status for a specified image.
+func (c *Client) DescribeImageReplicationStatus(ctx context.Context, params *DescribeImageReplicationStatusInput, optFns ...func(*Options)) (*DescribeImageReplicationStatusOutput, error) {
 	if params == nil {
-		params = &StartImageScanInput{}
+		params = &DescribeImageReplicationStatusInput{}
 	}
 
-	result, metadata, err := c.invokeOperation(ctx, "StartImageScan", params, optFns, c.addOperationStartImageScanMiddlewares)
+	result, metadata, err := c.invokeOperation(ctx, "DescribeImageReplicationStatus", params, optFns, c.addOperationDescribeImageReplicationStatusMiddlewares)
 	if err != nil {
 		return nil, err
 	}
 
-	out := result.(*StartImageScanOutput)
+	out := result.(*DescribeImageReplicationStatusOutput)
 	out.ResultMetadata = metadata
 	return out, nil
 }
 
-type StartImageScanInput struct {
+type DescribeImageReplicationStatusInput struct {
 
 	// An object with identifying information for an image in an Amazon ECR repository.
 	//
 	// This member is required.
 	ImageId *types.ImageIdentifier
 
-	// The name of the repository that contains the images to scan.
+	// The name of the repository that the image is in.
 	//
 	// This member is required.
 	RepositoryName *string
 
-	// The Amazon Web Services account ID associated with the registry that contains
-	// the repository in which to start an image scan request. If you do not specify a
-	// registry, the default registry is assumed.
+	// The Amazon Web Services account ID associated with the registry. If you do not
+	// specify a registry, the default registry is assumed.
 	RegistryId *string
 
 	noSmithyDocumentSerde
 }
 
-type StartImageScanOutput struct {
+type DescribeImageReplicationStatusOutput struct {
 
 	// An object with identifying information for an image in an Amazon ECR repository.
 	ImageId *types.ImageIdentifier
 
-	// The current state of the scan.
-	ImageScanStatus *types.ImageScanStatus
-
-	// The registry ID associated with the request.
-	RegistryId *string
+	// The replication status details for the images in the specified repository.
+	ReplicationStatuses []types.ImageReplicationStatus
 
 	// The repository name associated with the request.
 	RepositoryName *string
@@ -71,12 +63,12 @@ type StartImageScanOutput struct {
 	noSmithyDocumentSerde
 }
 
-func (c *Client) addOperationStartImageScanMiddlewares(stack *middleware.Stack, options Options) (err error) {
-	err = stack.Serialize.Add(&awsAwsjson11_serializeOpStartImageScan{}, middleware.After)
+func (c *Client) addOperationDescribeImageReplicationStatusMiddlewares(stack *middleware.Stack, options Options) (err error) {
+	err = stack.Serialize.Add(&awsAwsjson11_serializeOpDescribeImageReplicationStatus{}, middleware.After)
 	if err != nil {
 		return err
 	}
-	err = stack.Deserialize.Add(&awsAwsjson11_deserializeOpStartImageScan{}, middleware.After)
+	err = stack.Deserialize.Add(&awsAwsjson11_deserializeOpDescribeImageReplicationStatus{}, middleware.After)
 	if err != nil {
 		return err
 	}
@@ -116,10 +108,10 @@ func (c *Client) addOperationStartImageScanMiddlewares(stack *middleware.Stack, 
 	if err = smithyhttp.AddCloseResponseBodyMiddleware(stack); err != nil {
 		return err
 	}
-	if err = addOpStartImageScanValidationMiddleware(stack); err != nil {
+	if err = addOpDescribeImageReplicationStatusValidationMiddleware(stack); err != nil {
 		return err
 	}
-	if err = stack.Initialize.Add(newServiceMetadataMiddleware_opStartImageScan(options.Region), middleware.Before); err != nil {
+	if err = stack.Initialize.Add(newServiceMetadataMiddleware_opDescribeImageReplicationStatus(options.Region), middleware.Before); err != nil {
 		return err
 	}
 	if err = addRequestIDRetrieverMiddleware(stack); err != nil {
@@ -134,11 +126,11 @@ func (c *Client) addOperationStartImageScanMiddlewares(stack *middleware.Stack, 
 	return nil
 }
 
-func newServiceMetadataMiddleware_opStartImageScan(region string) *awsmiddleware.RegisterServiceMetadata {
+func newServiceMetadataMiddleware_opDescribeImageReplicationStatus(region string) *awsmiddleware.RegisterServiceMetadata {
 	return &awsmiddleware.RegisterServiceMetadata{
 		Region:        region,
 		ServiceID:     ServiceID,
 		SigningName:   "ecr",
-		OperationName: "StartImageScan",
+		OperationName: "DescribeImageReplicationStatus",
 	}
 }
