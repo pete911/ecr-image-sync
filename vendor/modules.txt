@@ -2,7 +2,7 @@
 ## explicit
 github.com/Microsoft/go-winio
 github.com/Microsoft/go-winio/pkg/guid
-# github.com/aws/aws-sdk-go-v2 v1.11.0
+# github.com/aws/aws-sdk-go-v2 v1.11.1
 ## explicit
 github.com/aws/aws-sdk-go-v2
 github.com/aws/aws-sdk-go-v2/aws
@@ -35,24 +35,24 @@ github.com/aws/aws-sdk-go-v2/credentials/stscreds
 # github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.8.0
 github.com/aws/aws-sdk-go-v2/feature/ec2/imds
 github.com/aws/aws-sdk-go-v2/feature/ec2/imds/internal/config
-# github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.0
+# github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.1
 github.com/aws/aws-sdk-go-v2/internal/configsources
-# github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.0.0
+# github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.0.1
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2
 # github.com/aws/aws-sdk-go-v2/internal/ini v1.3.0
 github.com/aws/aws-sdk-go-v2/internal/ini
-# github.com/aws/aws-sdk-go-v2/service/ecr v1.10.0
+# github.com/aws/aws-sdk-go-v2/service/ecr v1.10.1
 ## explicit
 github.com/aws/aws-sdk-go-v2/service/ecr
 github.com/aws/aws-sdk-go-v2/service/ecr/internal/endpoints
 github.com/aws/aws-sdk-go-v2/service/ecr/types
-# github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.5.0
+# github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.5.1
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url
 # github.com/aws/aws-sdk-go-v2/service/sso v1.6.0
 github.com/aws/aws-sdk-go-v2/service/sso
 github.com/aws/aws-sdk-go-v2/service/sso/internal/endpoints
 github.com/aws/aws-sdk-go-v2/service/sso/types
-# github.com/aws/aws-sdk-go-v2/service/sts v1.10.0
+# github.com/aws/aws-sdk-go-v2/service/sts v1.10.1
 ## explicit
 github.com/aws/aws-sdk-go-v2/service/sts
 github.com/aws/aws-sdk-go-v2/service/sts/internal/endpoints
@@ -83,7 +83,7 @@ github.com/containerd/containerd/platforms
 github.com/docker/distribution/digestset
 github.com/docker/distribution/reference
 github.com/docker/distribution/registry/api/errcode
-# github.com/docker/docker v20.10.10+incompatible
+# github.com/docker/docker v20.10.11+incompatible
 ## explicit
 github.com/docker/docker/api
 github.com/docker/docker/api/types
