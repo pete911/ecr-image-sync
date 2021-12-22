@@ -41,7 +41,7 @@ github.com/aws/aws-sdk-go-v2/internal/configsources
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2
 # github.com/aws/aws-sdk-go-v2/internal/ini v1.3.2
 github.com/aws/aws-sdk-go-v2/internal/ini
-# github.com/aws/aws-sdk-go-v2/service/ecr v1.11.1
+# github.com/aws/aws-sdk-go-v2/service/ecr v1.12.0
 ## explicit
 github.com/aws/aws-sdk-go-v2/service/ecr
 github.com/aws/aws-sdk-go-v2/service/ecr/internal/endpoints
