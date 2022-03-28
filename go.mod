@@ -6,7 +6,7 @@ require (
 	github.com/Microsoft/go-winio v0.4.16 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.16.1
 	github.com/aws/aws-sdk-go-v2/config v1.15.2
-	github.com/aws/aws-sdk-go-v2/service/ecr v1.17.1
+	github.com/aws/aws-sdk-go-v2/service/ecr v1.17.2
 	github.com/aws/aws-sdk-go-v2/service/sts v1.16.2
 	github.com/containerd/containerd v1.4.3 // indirect
 	github.com/docker/distribution v2.7.1+incompatible // indirect
