@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/pete911/ecr-image-sync/pkg/aws"
-	"github.com/pete911/ecr-image-sync/pkg/docker"
-	"github.com/pete911/ecr-image-sync/pkg/sync"
+	"github.com/pete911/ecr-image-sync/internal/aws"
+	"github.com/pete911/ecr-image-sync/internal/docker"
+	"github.com/pete911/ecr-image-sync/internal/sync"
 	"log"
 	"os"
 	"strings"

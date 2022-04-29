@@ -32,16 +32,7 @@ ecr-image-sync [flags]
  - run (dry-run) `docker run --rm -v $HOME/.aws/credentials:/root/.aws/credentials:ro -v $(pwd)/images-list:/images-list:ro pete911/ecr-image-sync:latest -aws-account <account> -aws-region <region> -dry-run`
  - exec inside container (debug) `docker run -it --rm --entrypoint /bin/sh pete911/ecr-image-sync:latest`
 
-## fuzz beta
+## release
 
-Project is using [go fuzz beta](https://blog.golang.org/fuzz-beta) to test docker image name as input. To run fuzzing,
-you need to run the following:
-
-```
-# build the go toolchaing from the dev.fuzz development branch
-$ go get golang.org/dl/gotip
-$ gotip download dev.fuzz
-
-# run fuzz test (set fuzztime to prefered value)
-$ gotip test -fuzz=FuzzImage -fuzztime=10s ./...
-```
+Releases are published when the new tag is created e.g.
+`git tag -m "add super cool feature" 0.1.0 && git push --follow-tags`
