@@ -2,8 +2,9 @@ github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 h1:w+iIsaOQNcT7O
 github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78/go.mod h1:LmzpDX56iTiv29bbRTIsUNlaFfuhWRQBWjQdVyAevI8=
 github.com/Microsoft/go-winio v0.4.16 h1:FtSW/jqD+l4ba5iPBj9CODVtgfYAD8w2wS923g/cFDk=
 github.com/Microsoft/go-winio v0.4.16/go.mod h1:XB6nPKklQyQ7GC9LdcBEcBl8PF76WugXOPRXwdLnMv0=
-github.com/aws/aws-sdk-go-v2 v1.16.10 h1:+yDD0tcuHRQZgqONkpDwzepqmElQaSlFPymHRHR9mrc=
 github.com/aws/aws-sdk-go-v2 v1.16.10/go.mod h1:WTACcleLz6VZTp7fak4EO5b9Q4foxbn+8PIz3PmyKlo=
+github.com/aws/aws-sdk-go-v2 v1.16.11 h1:xM1ZPSvty3xVmdxiGr7ay/wlqv+MWhH0rMlyLdbC0YQ=
+github.com/aws/aws-sdk-go-v2 v1.16.11/go.mod h1:WTACcleLz6VZTp7fak4EO5b9Q4foxbn+8PIz3PmyKlo=
 github.com/aws/aws-sdk-go-v2/config v1.16.0 h1:LxHC50cwOLxYo67NEpwpNUiOi6ngXfDpEETphSZ6bAw=
 github.com/aws/aws-sdk-go-v2/config v1.16.0/go.mod h1:eatrtwIm5WdvASoYCy5oPkinfiwiYFg2jLG9tJoKzkE=
 github.com/aws/aws-sdk-go-v2/credentials v1.12.12 h1:iShu6VaWZZZfUZvlGtRjl+g1lWk44g1QmiCTD4KS0jI=
