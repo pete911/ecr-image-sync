@@ -1,0 +1,24 @@
+name: pipeline
+
+on: [push]
+
+jobs:
+  go:
+    uses: pete911/github-actions/.github/workflows/go.yml@main
+  go-release:
+    needs:
+      - go
+    uses: pete911/github-actions/.github/workflows/go-releaser.yml@main
+    secrets:
+      PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+  docker-scan:
+    uses: pete911/github-actions/.github/workflows/docker-scan.yml@main
+  docker-push:
+    needs:
+      - docker-scan
+    uses: pete911/github-actions/.github/workflows/docker-push.yml@main
+    inputs:
+      build-args: version=${{ github.ref_name }}
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USER }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_PASSWORD }}

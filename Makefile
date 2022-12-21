@@ -7,5 +7,5 @@ test:
 .PHONY:test
 
 build: test
-	go build -ldflags "-X main.Version=${VERSION}" -mod vendor
+	go build -ldflags "-X main.Version=${VERSION}"
 .PHONY:build

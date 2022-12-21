@@ -23,12 +23,35 @@ ecr-image-sync [flags]
 +--------------+----------------------------------------------------------------+
 | -images-file | file containing list of images to sync (default "images-list") |
 +--------------+----------------------------------------------------------------+
+| -version     | ecr-image-sync version                                         |
++--------------+----------------------------------------------------------------+
 ```
 
-## docker
+## build
 
- - run (dry-run) `docker run --rm -v $HOME/.aws/credentials:/root/.aws/credentials:ro -v $(pwd)/images-list:/images-list:ro pete911/ecr-image-sync:latest -aws-account <account> -aws-region <region> -dry-run`
- - exec inside container (debug) `docker run -it --rm --entrypoint /bin/sh pete911/ecr-image-sync:latest`
+`go build` or `go install`
+
+## download
+
+- [binary](https://github.com/pete911/ipcalc/releases)
+
+## build/install
+
+### brew
+
+- add tap `brew tap pete911/tap`
+- install `brew install pete911/tap/ipcalc`
+
+### go
+
+[go](https://golang.org/dl/) has to be installed.
+- build `make build`
+- install `make install`
+
+### docker
+
+- run (dry-run) `docker run --rm -v $HOME/.aws/credentials:/root/.aws/credentials:ro -v $(pwd)/images-list:/images-list:ro pete911/ecr-image-sync:latest -aws-account <account> -aws-region <region> -dry-run`
+- exec inside container (debug) `docker run -it --rm --entrypoint /bin/sh pete911/ecr-image-sync:latest`
 
 ## release
 

@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// output from docker client has to be read, otherwise we return before before the process finishes
+// output from docker client has to be read, otherwise we return before the process finishes
 func printOnOneLine(reader io.Reader) {
 
 	scanner := bufio.NewScanner(reader)

@@ -11,9 +11,7 @@ var ecrRegistryRegex *regexp.Regexp
 
 func init() {
 
-	account := `[\d]{12}`
-	region := `(us(-gov)?|ap|ca|cn|eu|sa)-(central|(north|south)?(east|west)?)-\d`
-	r, err := regexp.Compile(fmt.Sprintf("%s.dkr.ecr.%s.amazonaws.com", account, region))
+	r, err := regexp.Compile(`\d{12}\.dkr\.ecr\.[^.]+\.amazonaws.com`)
 	if err != nil {
 		log.Fatalf("cannot compile ecr registry regex")
 	}
