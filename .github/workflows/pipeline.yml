@@ -17,7 +17,7 @@ jobs:
     needs:
       - docker-scan
     uses: pete911/github-actions/.github/workflows/docker-push.yml@main
-    inputs:
+    with:
       build-args: version=${{ github.ref_name }}
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USER }}

@@ -33,14 +33,14 @@ ecr-image-sync [flags]
 
 ## download
 
-- [binary](https://github.com/pete911/ipcalc/releases)
+- [binary](https://github.com/pete911/ecr-image-sync/releases)
 
 ## build/install
 
 ### brew
 
 - add tap `brew tap pete911/tap`
-- install `brew install pete911/tap/ipcalc`
+- install `brew install pete911/tap/ecr-image-sync`
 
 ### go
 
