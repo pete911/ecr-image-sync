@@ -1,5 +1,7 @@
 # ecr-image-sync
 
+[![pipeline](https://github.com/pete911/ecr-image-sync/actions/workflows/pipeline.yml/badge.svg)](https://github.com/pete911/ecr-image-sync/actions/workflows/pipeline.yml)
+
 Downloads docker images from provided list, then tag with AWS ECR tags and uploads them to AWS ECR. This helps to keep
 all images on AWS network (no need to download from public Internet), list can also be audited and reviewed.
 
