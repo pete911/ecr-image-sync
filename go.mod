@@ -7,7 +7,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.18.10
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.18.1
 	github.com/aws/aws-sdk-go-v2/service/sts v1.18.2
-	github.com/docker/docker v20.10.23+incompatible
+	github.com/docker/docker v23.0.0+incompatible
 )
 
 require (
@@ -21,6 +21,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sso v1.12.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.14.0 // indirect
 	github.com/aws/smithy-go v1.13.5 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
@@ -31,7 +32,7 @@ require (
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.0.2 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/sirupsen/logrus v1.9.0 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
 	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/sys v0.3.0 // indirect
