@@ -7,7 +7,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.18.27
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.18.13
 	github.com/aws/aws-sdk-go-v2/service/sts v1.19.2
-	github.com/docker/docker v24.0.3+incompatible
+	github.com/docker/docker v24.0.4+incompatible
 )
 
 require (
