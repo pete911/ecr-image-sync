@@ -3,7 +3,7 @@ module github.com/pete911/ecr-image-sync
 go 1.21
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.21.0
+	github.com/aws/aws-sdk-go-v2 v1.21.1
 	github.com/aws/aws-sdk-go-v2/config v1.18.43
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.20.0
 	github.com/aws/aws-sdk-go-v2/service/sts v1.23.0
@@ -20,7 +20,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.9.35 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.15.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.17.1 // indirect
-	github.com/aws/smithy-go v1.14.2 // indirect
+	github.com/aws/smithy-go v1.15.0 // indirect
 	github.com/docker/distribution v2.8.2+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
