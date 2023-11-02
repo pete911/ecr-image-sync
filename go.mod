@@ -3,10 +3,10 @@ module github.com/pete911/ecr-image-sync
 go 1.21
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.22.0
+	github.com/aws/aws-sdk-go-v2 v1.22.1
 	github.com/aws/aws-sdk-go-v2/config v1.20.0
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.21.0
-	github.com/aws/aws-sdk-go-v2/service/sts v1.24.0
+	github.com/aws/aws-sdk-go-v2/service/sts v1.25.0
 	github.com/docker/docker v24.0.7+incompatible
 )
 
@@ -14,10 +14,10 @@ require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.14.0 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.14.0 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.2.0 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.5.0 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.2.1 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.5.1 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.4.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.16.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.18.0 // indirect
 	github.com/aws/smithy-go v1.16.0 // indirect
