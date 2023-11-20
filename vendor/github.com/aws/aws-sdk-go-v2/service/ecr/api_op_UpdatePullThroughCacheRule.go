@@ -12,31 +12,36 @@ import (
 	"time"
 )
 
-// Deletes a pull through cache rule.
-func (c *Client) DeletePullThroughCacheRule(ctx context.Context, params *DeletePullThroughCacheRuleInput, optFns ...func(*Options)) (*DeletePullThroughCacheRuleOutput, error) {
+// Updates an existing pull through cache rule.
+func (c *Client) UpdatePullThroughCacheRule(ctx context.Context, params *UpdatePullThroughCacheRuleInput, optFns ...func(*Options)) (*UpdatePullThroughCacheRuleOutput, error) {
 	if params == nil {
-		params = &DeletePullThroughCacheRuleInput{}
+		params = &UpdatePullThroughCacheRuleInput{}
 	}
 
-	result, metadata, err := c.invokeOperation(ctx, "DeletePullThroughCacheRule", params, optFns, c.addOperationDeletePullThroughCacheRuleMiddlewares)
+	result, metadata, err := c.invokeOperation(ctx, "UpdatePullThroughCacheRule", params, optFns, c.addOperationUpdatePullThroughCacheRuleMiddlewares)
 	if err != nil {
 		return nil, err
 	}
 
-	out := result.(*DeletePullThroughCacheRuleOutput)
+	out := result.(*UpdatePullThroughCacheRuleOutput)
 	out.ResultMetadata = metadata
 	return out, nil
 }
 
-type DeletePullThroughCacheRuleInput struct {
+type UpdatePullThroughCacheRuleInput struct {
 
-	// The Amazon ECR repository prefix associated with the pull through cache rule to
-	// delete.
+	// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+	// secret that identifies the credentials to authenticate to the upstream registry.
+	//
+	// This member is required.
+	CredentialArn *string
+
+	// The repository name prefix to use when caching images from the source registry.
 	//
 	// This member is required.
 	EcrRepositoryPrefix *string
 
-	// The Amazon Web Services account ID associated with the registry that contains
+	// The Amazon Web Services account ID associated with the registry associated with
 	// the pull through cache rule. If you do not specify a registry, the default
 	// registry is assumed.
 	RegistryId *string
@@ -44,23 +49,21 @@ type DeletePullThroughCacheRuleInput struct {
 	noSmithyDocumentSerde
 }
 
-type DeletePullThroughCacheRuleOutput struct {
-
-	// The timestamp associated with the pull through cache rule.
-	CreatedAt *time.Time
+type UpdatePullThroughCacheRuleOutput struct {
 
 	// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
 	// secret associated with the pull through cache rule.
 	CredentialArn *string
 
-	// The Amazon ECR repository prefix associated with the request.
+	// The Amazon ECR repository prefix associated with the pull through cache rule.
 	EcrRepositoryPrefix *string
 
 	// The registry ID associated with the request.
 	RegistryId *string
 
-	// The upstream registry URL associated with the pull through cache rule.
-	UpstreamRegistryUrl *string
+	// The date and time, in JavaScript date format, when the pull through cache rule
+	// was updated.
+	UpdatedAt *time.Time
 
 	// Metadata pertaining to the operation's result.
 	ResultMetadata middleware.Metadata
@@ -68,19 +71,19 @@ type DeletePullThroughCacheRuleOutput struct {
 	noSmithyDocumentSerde
 }
 
-func (c *Client) addOperationDeletePullThroughCacheRuleMiddlewares(stack *middleware.Stack, options Options) (err error) {
+func (c *Client) addOperationUpdatePullThroughCacheRuleMiddlewares(stack *middleware.Stack, options Options) (err error) {
 	if err := stack.Serialize.Add(&setOperationInputMiddleware{}, middleware.After); err != nil {
 		return err
 	}
-	err = stack.Serialize.Add(&awsAwsjson11_serializeOpDeletePullThroughCacheRule{}, middleware.After)
+	err = stack.Serialize.Add(&awsAwsjson11_serializeOpUpdatePullThroughCacheRule{}, middleware.After)
 	if err != nil {
 		return err
 	}
-	err = stack.Deserialize.Add(&awsAwsjson11_deserializeOpDeletePullThroughCacheRule{}, middleware.After)
+	err = stack.Deserialize.Add(&awsAwsjson11_deserializeOpUpdatePullThroughCacheRule{}, middleware.After)
 	if err != nil {
 		return err
 	}
-	if err := addProtocolFinalizerMiddlewares(stack, options, "DeletePullThroughCacheRule"); err != nil {
+	if err := addProtocolFinalizerMiddlewares(stack, options, "UpdatePullThroughCacheRule"); err != nil {
 		return fmt.Errorf("add protocol finalizers: %v", err)
 	}
 
@@ -123,10 +126,10 @@ func (c *Client) addOperationDeletePullThroughCacheRuleMiddlewares(stack *middle
 	if err = addSetLegacyContextSigningOptionsMiddleware(stack); err != nil {
 		return err
 	}
-	if err = addOpDeletePullThroughCacheRuleValidationMiddleware(stack); err != nil {
+	if err = addOpUpdatePullThroughCacheRuleValidationMiddleware(stack); err != nil {
 		return err
 	}
-	if err = stack.Initialize.Add(newServiceMetadataMiddleware_opDeletePullThroughCacheRule(options.Region), middleware.Before); err != nil {
+	if err = stack.Initialize.Add(newServiceMetadataMiddleware_opUpdatePullThroughCacheRule(options.Region), middleware.Before); err != nil {
 		return err
 	}
 	if err = awsmiddleware.AddRecursionDetection(stack); err != nil {
@@ -147,10 +150,10 @@ func (c *Client) addOperationDeletePullThroughCacheRuleMiddlewares(stack *middle
 	return nil
 }
 
-func newServiceMetadataMiddleware_opDeletePullThroughCacheRule(region string) *awsmiddleware.RegisterServiceMetadata {
+func newServiceMetadataMiddleware_opUpdatePullThroughCacheRule(region string) *awsmiddleware.RegisterServiceMetadata {
 	return &awsmiddleware.RegisterServiceMetadata{
 		Region:        region,
 		ServiceID:     ServiceID,
-		OperationName: "DeletePullThroughCacheRule",
+		OperationName: "UpdatePullThroughCacheRule",
 	}
 }
