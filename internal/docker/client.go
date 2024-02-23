@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/docker/docker/api/types/registry"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/filters"
@@ -55,7 +56,7 @@ func (c Client) ImageTag(image, tag string) error {
 		return errors.New("get image id: image id not found")
 	}
 
-	// tagging image with existing tat is OK, no need to check if tag exists
+	// tagging image with existing tag is OK, no need to check if tag exists
 	return c.cli.ImageTag(context.Background(), id, tag)
 }
 
@@ -92,7 +93,7 @@ func (c Client) getImageID(image string) (string, error) {
 
 func GetRegistryAuth(user, token, url string) (string, error) {
 
-	auth := types.AuthConfig{
+	auth := registry.AuthConfig{
 		Username:      user,
 		Password:      token,
 		ServerAddress: url,
