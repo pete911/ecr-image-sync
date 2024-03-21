@@ -7,7 +7,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.27.8
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.27.3
 	github.com/aws/aws-sdk-go-v2/service/sts v1.28.5
-	github.com/docker/docker v25.0.5+incompatible
+	github.com/docker/docker v26.0.0+incompatible
 )
 
 require (
@@ -31,6 +31,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
+	github.com/moby/docker-image-spec v1.3.1 // indirect
 	github.com/moby/term v0.0.0-20221205130635-1aeaba878587 // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
