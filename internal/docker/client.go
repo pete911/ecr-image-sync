@@ -6,9 +6,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/api/types/registry"
 
-	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
 )
@@ -26,9 +26,9 @@ func NewClient() (Client, error) {
 	return Client{cli: cli}, nil
 }
 
-func (c Client) ImagePull(registryAuth, image string) error {
+func (c Client) ImagePull(registryAuth, img string) error {
 
-	reader, err := c.cli.ImagePull(context.Background(), image, types.ImagePullOptions{RegistryAuth: registryAuth})
+	reader, err := c.cli.ImagePull(context.Background(), img, image.PullOptions{RegistryAuth: registryAuth})
 	if err != nil {
 		return err
 	}
@@ -60,9 +60,9 @@ func (c Client) ImageTag(image, tag string) error {
 	return c.cli.ImageTag(context.Background(), id, tag)
 }
 
-func (c Client) ImagePush(registryAuth, image string) error {
+func (c Client) ImagePush(registryAuth, img string) error {
 
-	reader, err := c.cli.ImagePush(context.Background(), image, types.ImagePushOptions{RegistryAuth: registryAuth})
+	reader, err := c.cli.ImagePush(context.Background(), img, image.PushOptions{RegistryAuth: registryAuth})
 	if err != nil {
 		return err
 	}
@@ -71,19 +71,19 @@ func (c Client) ImagePush(registryAuth, image string) error {
 	return nil
 }
 
-func (c Client) getImageID(image string) (string, error) {
+func (c Client) getImageID(img string) (string, error) {
 
 	filter := filters.NewArgs()
-	filter.Add("reference", image)
+	filter.Add("reference", img)
 
-	imageSummaries, err := c.cli.ImageList(context.Background(), types.ImageListOptions{Filters: filter})
+	imageSummaries, err := c.cli.ImageList(context.Background(), image.ListOptions{Filters: filter})
 	if err != nil {
 		return "", fmt.Errorf("cannot list images: %v", err)
 	}
 
 	for _, imageSummary := range imageSummaries {
 		for _, repoTag := range imageSummary.RepoTags {
-			if repoTag == image {
+			if repoTag == img {
 				return imageSummary.ID, nil
 			}
 		}
