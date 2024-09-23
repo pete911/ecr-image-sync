@@ -5,7 +5,7 @@ go 1.22
 require (
 	github.com/aws/aws-sdk-go-v2 v1.31.0
 	github.com/aws/aws-sdk-go-v2/config v1.27.36
-	github.com/aws/aws-sdk-go-v2/service/ecr v1.34.0
+	github.com/aws/aws-sdk-go-v2/service/ecr v1.35.0
 	github.com/aws/aws-sdk-go-v2/service/sts v1.31.0
 	github.com/docker/docker v27.3.1+incompatible
 )
