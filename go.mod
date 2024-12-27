@@ -5,7 +5,7 @@ go 1.23
 require (
 	github.com/aws/aws-sdk-go-v2 v1.32.7
 	github.com/aws/aws-sdk-go-v2/config v1.28.7
-	github.com/aws/aws-sdk-go-v2/service/ecr v1.36.9
+	github.com/aws/aws-sdk-go-v2/service/ecr v1.37.0
 	github.com/aws/aws-sdk-go-v2/service/sts v1.33.3
 	github.com/docker/docker v27.4.1+incompatible
 )
