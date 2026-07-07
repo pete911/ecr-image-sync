@@ -69,7 +69,7 @@ func listImages(fileName string) []string {
 	}
 	defer file.Close()
 
-	duplicateImages := make(map[string]interface{})
+	duplicateImages := make(map[string]any)
 	var images []string
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {

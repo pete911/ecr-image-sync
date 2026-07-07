@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/api/types/registry"
+	"slices"
 
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
@@ -82,10 +83,8 @@ func (c Client) getImageID(img string) (string, error) {
 	}
 
 	for _, imageSummary := range imageSummaries {
-		for _, repoTag := range imageSummary.RepoTags {
-			if repoTag == img {
-				return imageSummary.ID, nil
-			}
+		if slices.Contains(imageSummary.RepoTags, img) {
+			return imageSummary.ID, nil
 		}
 	}
 	return "", nil
